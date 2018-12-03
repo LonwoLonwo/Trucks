@@ -8,18 +8,22 @@ public class Trucks
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Число ящиков: ");
-        int a = Integer.parseInt(reader.readLine());
+        int a = 0;
+        a = Integer.parseInt(reader.readLine());
 
         int b = a/27;
 
         int c = b/12;
 
-        for (int j = 1; j < c; j++) {
-            System.out.println("Грузовик " + j + ":");
-            for (int y = 1; y < 12; y++) {
-                System.out.println("Контейнер " + y + ":");
-                for (int i = 1; i < 27; i++) {
-                    System.out.println("Ящик " + i);
+        int count = 0;
+
+        for (int j = 0; j <= c && j < 12; j++) {
+            System.out.println("Грузовик " + (j + 1) + ":");
+            for (int y = 0; y <= b && y < 27; y++) {
+                System.out.println("Контейнер " + (y + 1) + ":");
+                for (int i = 0; i <= a; i++) {
+                    System.out.println("Ящик " + (i + 1));
+                    count++;
                 }
             }
         }
