@@ -4,26 +4,29 @@ import java.io.InputStreamReader;
 
 public class Trucks
 {
+    private static int containerCapacity = 27;
+    private static int truckCapacity = 12;
+
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Число ящиков: ");
-        int a = 0;
-        a = Integer.parseInt(reader.readLine());
+        int boxTotalCount = 0;
+        boxTotalCount = Integer.parseInt(reader.readLine());
 
-        int b = a/27;
+        int containerCount = boxTotalCount/containerCapacity;
 
-        int c = b/12;
+        int trucksCount = containerCount/truckCapacity;
 
-        int count = 0;
+        int containerCounter = 0;
+        int boxCounter = 0;
 
-        for (int j = 0; j <= c && j < 12; j++) {
+        for (int j = 0; j <= trucksCount; j++) {
             System.out.println("Грузовик " + (j + 1) + ":");
-            for (int y = 0; y <= b && y < 27; y++) {
-                System.out.println("Контейнер " + (y + 1) + ":");
-                for (int i = 0; i <= a; i++) {
-                    System.out.println("Ящик " + (i + 1));
-                    count++;
+            for (int y = 0; boxCounter <= boxTotalCount && y < truckCapacity; y++, containerCounter++) {
+                System.out.println("Контейнер " + (containerCounter + 1) + ":");
+                for (int i = 0; boxCounter <= boxTotalCount && i < containerCapacity; i++, boxCounter++) {
+                    System.out.println("Ящик " + (boxCounter + 1));
                 }
             }
         }
