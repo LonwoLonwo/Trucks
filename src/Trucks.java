@@ -23,9 +23,9 @@ public class Trucks
 
         for (int j = 0; j <= trucksCount; j++) {
             System.out.println("Грузовик " + (j + 1) + ":");
-            for (int y = 0; boxCounter <= boxTotalCount && y < truckCapacity; y++, containerCounter++) {
+            for (int y = 0; y < truckCapacity && boxCounter < boxTotalCount; y++, containerCounter++) {
                 System.out.println("Контейнер " + (containerCounter + 1) + ":");
-                for (int i = 0; boxCounter <= boxTotalCount && i < containerCapacity; i++, boxCounter++) {
+                for (int i = 0; i < containerCapacity && boxCounter < boxTotalCount; i++, boxCounter++) {
                     System.out.println("Ящик " + (boxCounter + 1));
                 }
             }
